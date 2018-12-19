@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d9a32efb1f95ba7438fcfb13517c8984
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bedCamera: {fileID: 1858285766557164, guid: a93a08068d0129e49a8fb4aa4d5eebc5,
+      type: 2}
+  - startCamera: {fileID: 1203594716121278, guid: 528ef9fd1c069724cacc6464d2fb2099,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
