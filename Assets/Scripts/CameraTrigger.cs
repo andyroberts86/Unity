@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraTrigger : MonoBehaviour {
+public class CameraTrigger : MonoBehaviour
+{
     public Camera newCamera;
     public Camera[] allCameras;
 
@@ -15,7 +16,7 @@ public class CameraTrigger : MonoBehaviour {
     {
         if (collision.gameObject.name == "Player")
         {
-            for(int i = 0; i< allCameras.Length; i++)
+            for (int i = 0; i < allCameras.Length; i++)
             {
                 allCameras[i].enabled = false;
             }
