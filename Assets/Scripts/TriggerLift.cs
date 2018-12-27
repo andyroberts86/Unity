@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class TriggerLift : MonoBehaviour
 {
-    private GameObject obj;
     public GameObject lift;
     private Animator anim;
 
     // Use this for initialization
     void Start()
-        {
-        obj = GetComponent<GameObject>();
+    {
         anim = lift.GetComponent<Animator>();
         anim.enabled = false;
     }
@@ -22,11 +20,5 @@ public class TriggerLift : MonoBehaviour
         {
             anim.enabled = true;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 }

@@ -15,13 +15,13 @@ public class LiftPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (isInContact)
         {
             player.transform.position = new Vector3(
                 player.transform.position.x,
-                lift.position.y + 0.4f,
+                lift.position.y + 0.6f,
                 player.transform.position.z);
         }
     }

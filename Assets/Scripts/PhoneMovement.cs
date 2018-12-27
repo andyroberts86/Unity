@@ -108,20 +108,22 @@ public class PhoneMovement : MonoBehaviour
 
         rb.velocity = newVelocity;
     }
-    
+
+    private readonly float maxSpeed = 300;
+
     float GetForce(float deltaIn, float speed)
     {
         Debug.Log("ANDROB01 - deltaIn = " + deltaIn + ". speed = " + speed + ". total = " + deltaIn * (speed * baseSpeed));
         float total = deltaIn * (speed * baseSpeed);
 
-        if(total > 650)
+        if(total > maxSpeed)
         {
-            total = 650;
+            total = maxSpeed;
         }
 
-        if(total < -650)
+        if(total < -maxSpeed)
         {
-            total = -650;
+            total = -maxSpeed;
         }
 
         return total;
