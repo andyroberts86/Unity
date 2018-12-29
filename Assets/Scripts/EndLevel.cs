@@ -6,13 +6,24 @@ using UnityEngine.SceneManagement;
 public class EndLevel : MonoBehaviour
 {
     public string levelName;
+    public AudioClip soundClip;
+    public AudioSource mainMusic;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag.Equals("Player"))
         {
+            other.GetComponent<Rigidbody>().isKinematic = true;
             Debug.Log("Here we go!");
-            SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
+            GetComponent<AudioSource>().PlayOneShot(soundClip);
+            mainMusic.mute = true;
+            StartCoroutine(DoAfterSound());
         }
+    }
+
+    IEnumerator DoAfterSound()
+    {
+        yield return new WaitForSeconds(soundClip.length);
+        SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Single);
     }
 }

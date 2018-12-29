@@ -7,11 +7,15 @@ public class LiftPlayer : MonoBehaviour
     public Rigidbody player;
     private bool isInContact = false;
     private Transform lift;
+    //private AudioClip clip;
+    //public AudioSource audiosrc;
 
     // Start is called before the first frame update
     void Start()
     {
         lift = GetComponent<Transform>();
+
+        //clip = Resources.Load<AudioClip>("liftEnter");
     }
 
     // Update is called once per frame
@@ -33,6 +37,8 @@ public class LiftPlayer : MonoBehaviour
             Debug.Log("Enter");
             isInContact = true;
             player.useGravity = false;
+
+            //audiosrc.PlayOneShot(clip);
         }
     }
 
@@ -43,6 +49,8 @@ public class LiftPlayer : MonoBehaviour
             Debug.Log("Exit");
             isInContact = false;
             player.useGravity = true;
+
+            //audiosrc.PlayOneShot(clip);
         }
     }
 

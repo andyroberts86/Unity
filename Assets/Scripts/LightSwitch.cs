@@ -7,6 +7,8 @@ public class LightSwitch : MonoBehaviour
     public List<Light> endLights;
     public GameObject blocker;
     private Animator anim;
+    public AudioSource aSrc;
+    public AudioClip aClip;
 
     // Use this for initialization
     void Start()
@@ -24,6 +26,7 @@ public class LightSwitch : MonoBehaviour
     {
         if (collision.gameObject.name == "Player")
         {
+            aSrc.PlayOneShot(aClip);
             anim.enabled = true;
             blocker.GetComponent<Animator>().enabled = true;
             foreach (Light l in endLights)
