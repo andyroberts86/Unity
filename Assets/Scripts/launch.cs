@@ -11,6 +11,8 @@ public class launch : MonoBehaviour {
         mainCam.gameObject.SetActive(false);
 
         startCamera.SetActive(true);
+
+        Physics.gravity = new Vector3(0f, -9.81f, 0f);
     }
 	
 	// Update is called once per frame
